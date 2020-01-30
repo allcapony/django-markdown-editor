@@ -24,18 +24,4 @@ blocks:
           - checkout
           - cache restore
           - pip install --cache_dir .pip_cache -r requirements.txt
-      jobs:
-        - name: Unit tests
-          commands:
-            - cd martor_demo
-            - python manage.py makemigrations
-            - python manage.py migrate
-            - python manage.py test
-        - name: Check list
-          commands:
-            - cd martor_demo
-            - python manage.py check --deploy
-        - name: Style check
-          commands:
-            - pip install flake8
-            - flake8 martor_demo/ --max-line-lenght=127
+      jobs: []
